@@ -20,14 +20,17 @@ arr1 = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7]
 
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort(arr):
-    for i in range(1, len(arr)):
-        for j in range(1, len(arr)):
+    if len(arr) == 1:
+        return arr
+    
+    for i in range(len(arr) - 1):
+        for j in range(len(arr) - 1):
             current = arr[j]
-            previous = arr[j - 1]
+            next = arr[j + 1]
 
-            if current < previous:
+            if current > next:
                 # swap
-                arr[j], arr[j - 1] = arr[j - 1], arr[j]
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
 
     return arr
 
